@@ -8,7 +8,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         items = Movie.objects.all()
         for item in items:
-            item.image.name = f"{item.image.name[0:13]}{item.title}.jpg" 
+            item.image.name = f"movie/images/m_{item.title}.png" 
             item.save()
         
         self.stdout.write(self.style.SUCCESS(f'Successfully updated with the illustrations of the movies'))
