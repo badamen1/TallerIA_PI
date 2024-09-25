@@ -2,11 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from .models import Movie
-
 import matplotlib.pyplot as plt
 import matplotlib
 import io
 import urllib, base64
+
 
 
 

@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from movie import views as movieViews
-
+from recommendations import views as recommendationsViews
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -28,6 +28,7 @@ urlpatterns = [
     path('news/', include('news.urls')),
     path('statistics/', movieViews.statistics_view, name='statistics'),
     path('signup/', movieViews.signup, name='signup'),
+    path('recommend/', include('recommendations.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
